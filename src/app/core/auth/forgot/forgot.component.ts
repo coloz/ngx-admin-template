@@ -55,4 +55,8 @@ export class ForgotComponent implements OnInit {
 		let phone = this.loginForm.controls['username'].value;
 		this.authService.sendSmscode(phone, 'forgot')
 	}
+
+	submit(){
+		
+	}
 }

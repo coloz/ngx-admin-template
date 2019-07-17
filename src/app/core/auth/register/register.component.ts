@@ -71,4 +71,8 @@ export class RegisterComponent implements OnInit {
 			})
 	}
 
+	submit() {
+
+	}
+
 }
