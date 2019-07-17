@@ -1,0 +1,12 @@
+<div class="root-box" [ngClass]="{'dark': true}">
+  <div class="left-box">
+    <app-menu></app-menu>
+  </div>
+  <div class="right-box">
+    <app-header></app-header>
+    <div class="page">
+          <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>

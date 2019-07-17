@@ -1,0 +1,8 @@
+<div class="dropdown-btn">
+    <button class="button">{{selectedItem.text}}<i class="fas fa-caret-down"></i></button>
+    <div class="dropdown-box" >
+        <ng-container *ngFor="let item of list">
+            <button (click)="selectItem(item)">{{item.text}}</button>
+        </ng-container>
+    </div>
+</div>

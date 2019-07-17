@@ -1,0 +1,212 @@
+$fold-width:55px;
+$unfold-width:265px;
+$left-padding:17px;
+$top-box-height:80px;
+$fold-button-margin-top:8px;
+$item-height:45px;
+$selected-color:#3F56D1;
+$menu-color:#16191c;
+
+.menu-box.fold {
+    width: $fold-width;
+}
+
+.menu-box {
+    width: $unfold-width;
+    height: 100vh;
+    background-color: $menu-color;
+    color: #fff;
+    transition: width 0.3s;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .top-box {
+        height: $top-box-height;
+
+        .brand-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            position: relative;
+            height: 100%;
+
+            img {
+                margin-left: $left-padding;
+            }
+
+            .fold {
+                position: absolute;
+                right: 0;
+                height: 60%;
+                width: $fold-width;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                i {
+                    margin-top: $fold-button-margin-top;
+                    color: #585a8c;
+                    font-size: 22px;
+                }
+            }
+
+            .fold:hover {
+                i {
+                    font-size: 25px;
+                    color: $selected-color;
+                }
+            }
+
+        }
+
+    }
+
+
+    .bottom-box {
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+
+        .item {
+            height: $item-height;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            font-size: 14px;
+            position: relative;
+
+            i {
+                width: $fold-width;
+                text-align: center;
+                color: $selected-color;
+            }
+
+            .submenu-down {
+                position: absolute;
+                right: 20px;
+
+                i {
+                    color: #7E92FF;
+                }
+
+            }
+
+        }
+
+        .item:hover,
+        .item.active {
+            background-color: $selected-color;
+            color: #fff !important;
+
+            i {
+                color: #fff !important;
+            }
+        }
+
+        .item.subitem {
+            padding-left: $left-padding+$left-padding;
+        }
+
+        .section {
+            padding-left: $left-padding;
+            margin-top: 30px;
+            color: #585a8c;
+            height: 20px;
+        }
+    }
+}
+
+.submenu-box {
+    visibility: hidden;
+    margin-top: -$item-height;
+    position: absolute;
+    right: $fold-width - $unfold-width;
+    width: $unfold-width - $fold-width;
+    z-index: 99;
+    padding-left: 10px;
+
+    .submenu {
+        background-color: $menu-color;
+
+        .title {
+            margin-left: 20px;
+        }
+
+        .subitem {
+            height: $item-height;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: $selected-color;
+            font-size: 14px;
+            position: relative;
+            color: #fff;
+
+            i {
+                position: relative;
+                width: $fold-width;
+                text-align: center;
+                color: $selected-color;
+            }
+        }
+    }
+
+    .subitem:hover,
+    .subitem.active {
+        background-color: $selected-color !important;
+
+        i {
+            color: #fff !important;
+        }
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        height: $item-height;
+        background-color: #16191c;
+    }
+}
+
+.tooltip-box {
+    visibility: hidden;
+    background-color: $menu-color;
+    margin-top: -$item-height;
+    position: absolute;
+    right: $fold-width - $unfold-width - 10px;
+    width: $unfold-width - $fold-width;
+    height: $item-height;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    z-index: 99;
+}
+
+.fold {
+
+    .item-box:hover {
+        .submenu-box {
+            visibility: visible;
+        }
+
+        .tooltip-box {
+            visibility: visible;
+        }
+    }
+
+
+    .section {
+        padding: auto !important;
+        border-bottom: 1px solid #585a8c;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    -webkit-user-select: none;
+}

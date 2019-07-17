@@ -1,0 +1,11 @@
+<div class="grid-box">
+    <div class="header">
+        <div class="title">{{title}}</div>
+        <div class="tool-box">
+            <ng-content select="dropdown-btn"></ng-content>
+            <ng-content select="search-box"></ng-content>
+            <ng-content select="button"></ng-content>
+        </div>
+    </div>
+    <ng-content></ng-content>
+</div>

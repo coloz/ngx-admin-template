@@ -1,0 +1,75 @@
+<div class="menu-box" [ngClass]="{'fold': isFold}">
+    <div class="top-box">
+        <div class="brand-box">
+            <img class="animated faster" [ngClass]="{'fadeOutLeft': isFold,'fadeInLeft':!isFold}"
+                src="assets/img/logo/blinker-logo-32.png" alt="blinker">
+            <div class="fold" (click)="fold()">
+                <i class="fal" [ngClass]="{'fa-chevron-right': isFold,'fa-chevron-left':!isFold}"></i>
+            </div>
+        </div>
+    </div>
+    <!-- 展开状态 -->
+    <div class="bottom-box">
+        <ng-container *ngFor="let item of menuList">
+            <!-- 无子菜单 -->
+            <ng-container *ngIf="!item.submenu">
+                <div class="item-box">
+                    <a class="item" *ngIf="item.page" [routerLink]="[ item.page ]" routerLinkActive="active">
+                        <i class="{{item.icon}}"></i>
+                        <span *ngIf="showTitle" class="animated faster fadeIn">{{item.title}}</span>
+                    </a>
+                    <a class="item" *ngIf="item.link" href="{{item.link}}" target="_blank">
+                        <i class="{{item.icon}}"></i>
+                        <span *ngIf="showTitle" class="animated faster fadeIn">{{item.title}}</span>
+                    </a>
+                    <div class="tooltip-box">{{item.title}}</div>
+                </div>
+            </ng-container>
+            <!-- 有子菜单 -->
+            <ng-container *ngIf="item.submenu">
+                <div class="item-box">
+                    <a class="item" (click)="showSubmenu(item)">
+                        <i class="{{item.icon}}"></i>
+                        <ng-container *ngIf="showTitle">
+                            <span class="animated faster fadeIn">{{item.title}}</span>
+                            <div class="submenu-down animated faster fadeIn">
+                                <i class="fal fa-chevron-down"></i>
+                            </div>
+                        </ng-container>
+                    </a>
+                    <!-- 显示子菜单 && 未折叠-->
+                    <ng-container *ngIf="item.showSubmenu && !isFold">
+                        <ng-container *ngFor="let subitem of item.submenu">
+                            <a class="item subitem" [routerLink]="[ subitem.page ]" routerLinkActive="active">
+                                <i class="{{subitem.icon}}"></i>
+                                <span *ngIf="showTitle" class="animated faster fadeIn">{{subitem.title}}</span>
+                            </a>
+                        </ng-container>
+                    </ng-container>
+                    <!-- 显示子菜单 && 折叠-->
+                    <ng-container *ngIf="isFold">
+                        <div class="submenu-box">
+                            <div class="submenu">
+                                <div class="title">{{item.title}}</div>
+                                <ng-container *ngFor="let subitem of item.submenu">
+                                    <a class="subitem" [routerLink]="[ subitem.page ]" routerLinkActive="active">
+                                        <i class="{{subitem.icon}}"></i>{{subitem.title}}
+                                    </a>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </ng-container>
+            <!-- 分节 -->
+            <ng-container *ngIf="item.section">
+                <div class="section animated faster fadeIn" *ngIf="!isFold">
+                    {{item.section}}
+                </div>
+                <div class="section animated faster fadeIn" *ngIf="isFold">
+                </div>
+            </ng-container>
+        </ng-container>
+        <div style="height: 30px"></div>
+    </div>
+</div>

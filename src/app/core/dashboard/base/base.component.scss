@@ -1,0 +1,90 @@
+$page-padding-top:80px;
+$page-padding-bottom:40px;
+
+.root-box.dark {
+    color: #fff;
+}
+
+.root-box.light {
+    color: #000;
+}
+
+.root-box {
+    background-color: #22262A;
+    display: flex;
+    // color: #fff;
+
+    .left-box {
+        position: relative;
+    }
+
+    .right-box {
+        padding: $page-padding-top 35px $page-padding-bottom 35px;
+        position: relative;
+        flex-grow: 1;
+
+        app-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: $page-padding-top;
+            width: 100%;
+            padding: 0 50px;
+        }
+
+        app-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: $page-padding-bottom;
+            padding: 0 50px;
+            width: 100%;
+        }
+
+        .page {
+            ::-webkit-scrollbar {
+                display: none;
+            }
+
+            height: calc(100vh - 120px);
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            ::ng-deep {
+                .container-fluid {
+                    height: 100%;
+
+                    .row.h100 {
+                        height: 100%;
+                    }
+
+                    .row.h70 {
+                        height: 70%;
+                    }
+
+                    .row.h50 {
+                        height: 50%;
+                    }
+
+                    .row.h30 {
+                        height: 30%;
+                    }
+
+                    .row.h20 {
+                        height: 20%;
+                    }
+
+                    .row.h10 {
+                        height: 10%;
+                    }
+
+                    .m-t-30 {
+                        margin-top: 30px;
+                    }
+                }
+            }
+
+        }
+
+    }
+}

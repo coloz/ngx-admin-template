@@ -1,0 +1,149 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import '~@swimlane/ngx-datatable/release/index.css';
+// @import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
+a {
+    text-decoration: none;
+
+}
+
+[flex-center] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[h100] {
+    height: 100%;
+}
+
+[h30] {
+    height: 30%;
+}
+
+[line] {
+    border-top: 1px #4B5660 solid;
+    width: 100%;
+}
+
+.table-box {
+    height: calc(100% - 61px);
+
+    .datatable-header-cell-label {
+        font-size: 14px;
+        color: #999999;
+    }
+    
+}
+
+.dropdown.button {
+    color: #fff;
+}
+
+button.button {
+    border: none;
+    padding: 0 15px;
+    color: #CCCCCC;
+    height: 45px;
+    min-width: 100px;
+    background: #404951;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        margin-right: 5px;
+    }
+}
+
+.button:hover {
+    color: #fff;
+    background: #3F56D1;
+}
+
+*:focus,
+:hover {
+    outline: none !important;
+}
+
+
+
+ngb-modal-window {
+
+    .modal-dialog {
+        margin: 12rem auto;
+    }
+
+    .modal-content {
+        border-radius: 0;
+
+        .modal-box {
+            height: 35vh;
+            padding: 20px;
+        }
+    }
+}
+
+
+.page .box {
+    background-color: #3A4147;
+    height: 100%;
+    position: relative;
+
+    .title {
+        font-size: 16px;
+        font-weight: 600;
+        height: 51px;
+        border-bottom: 1px solid #4B5660;
+        padding: 12px 0 0 15px;
+    }
+
+    .toolbox {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        height: 50px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: row;
+
+        .search {
+            height: 40px;
+            background-color: #2E3439;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            i {
+                padding: 0 10px;
+            }
+
+            input {
+                background-color: transparent;
+                border: none;
+                outline: medium;
+                color: #fff;
+            }
+
+            .cancel {
+                position: absolute;
+                right: 0;
+                font-size: 18px;
+                color: #CCCCCC;
+            }
+
+            .cancel:hover {
+                color: #fff;
+            }
+        }
+
+        button {
+            margin: 0 10px;
+        }
+    }
+}
