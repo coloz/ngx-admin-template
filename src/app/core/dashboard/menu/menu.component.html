@@ -4,7 +4,7 @@
             <img class="animated faster" [ngClass]="{'fadeOutLeft': isFold,'fadeInLeft':!isFold}"
                 src="assets/img/logo/blinker-logo-32.png" alt="blinker">
             <div class="fold" (click)="fold()">
-                <i class="fal" [ngClass]="{'fa-chevron-right': isFold,'fa-chevron-left':!isFold}"></i>
+                <i class="fas" [ngClass]="{'fa-chevron-right': isFold,'fa-chevron-left':!isFold}"></i>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
                         <ng-container *ngIf="showTitle">
                             <span class="animated faster fadeIn">{{item.title}}</span>
                             <div class="submenu-down animated faster fadeIn">
-                                <i class="fal fa-chevron-down"></i>
+                                <i class="fas fa-chevron-down"></i>
                             </div>
                         </ng-container>
                     </a>

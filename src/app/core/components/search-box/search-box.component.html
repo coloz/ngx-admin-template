@@ -1,6 +1,6 @@
 <div class="search-box">
-    <i class="fal fa-search"></i>
+    <i class="fas fa-search"></i>
     <input #searchbox (keyup.enter)="onEnter(searchbox.value)">
     <i *ngIf="searchbox.value!=''" (click)="searchbox.value='';onEnter(searchbox.value)"
-        class="fal fa-times cancel"></i>
+        class="fas fa-times cancel"></i>
 </div>
