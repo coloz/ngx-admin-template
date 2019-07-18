@@ -35,7 +35,7 @@ fs.readdir("src/docs", function (err, files) {
 });
 
 
-setTimeout(() => {
+setTimeout(function () {
     console.log(MenuList);
     // fs.open('menu.ts', 'w+', function (err, fd) {
     //     if (err) {
@@ -43,7 +43,7 @@ setTimeout(() => {
     //     }
     //     console.log("文件打开成功！");
     // });
-    fs.writeFile('menu.ts', MenuList, function (err) {
+    fs.writeFile('menu.ts', JSON.stringify(MenuList), function (err) {
         // if (err) {
         //     return console.error(err);
         // }
@@ -57,6 +57,6 @@ setTimeout(() => {
         //     console.log("异步读取文件数据: " + data.toString());
         // });
 
-    }, 1000);
+    })
 
-})
+}, 1000)
