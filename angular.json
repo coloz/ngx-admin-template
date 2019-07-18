@@ -24,13 +24,16 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/docs"
             ],
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+             "src/generateMenu.ts"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

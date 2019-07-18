@@ -1,37 +1,11 @@
 <div class="container-fluid">
-	<div class="row h50">
-		<div class="col-md-6">
+	<div class="row h100">
+		<div class="col-md-12">
 			<grid-box [title]="'Data List'">
-				<div style="padding: 20px">
-					grid-box中可以添加内容
-				</div>
-			</grid-box>
-		</div>
-		<div class="col-md-6">
-			<grid-box [title]="'Data Info'">
-				<button class="button"><span>按键1</span></button>
-				<button class="button"><span>按键2</span></button>
-				<div style="padding: 20px">
-					grid-box2
-				</div>
-			</grid-box>
-		</div>
-	</div>
-	<div class="row h30" style="margin-top: 30px">
-		<div class="col-md-6">
-			<grid-box [title]="'Data List'">
-				<dropdown-btn [list]="items"></dropdown-btn>
-				<div style="padding: 20px">
-					grid-box3
-				</div>
-			</grid-box>
-		</div>
-		<div class="col-md-6">
-			<grid-box [title]="'Data Info'">
 				<search-box (keywordChanged)="keywordChanged($event)"></search-box>
 				<button class="button"><i class="fas fa-user-friends"></i><span>按键3</span></button>
 				<div style="padding: 20px">
-					grid-box4
+					grid-box中可以添加内容
 				</div>
 			</grid-box>
 		</div>
