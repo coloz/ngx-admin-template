@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class ServerInterceptor implements HttpInterceptor {
 
     constructor(
-        private router: Router
+        // private router: Router
     ) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -54,7 +54,7 @@ export class ServerInterceptor implements HttpInterceptor {
         // console.log(code);
         //跳转到登录页
         if (code == 1400) {
-            this.router.navigateByUrl('/auth');
+            // this.router.navigateByUrl('/auth');
         }
     }
 

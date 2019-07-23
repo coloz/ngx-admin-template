@@ -13,6 +13,7 @@ import { NgxsStoragePluginModule, StorageOption } from '@ngxs/storage-plugin';
 import { AuthState } from './core/auth/auth.state';
 import { environment } from 'src/environments/environment';
 import { ServerInterceptor } from './core/interceptor/server.interceptor';
+import { ReaderService } from './core/services/reader.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ServerInterceptor } from './core/interceptor/server.interceptor';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ServerInterceptor, multi: true },
     AuthService,
+    ReaderService
   ],
   bootstrap: [AppComponent]
 })
